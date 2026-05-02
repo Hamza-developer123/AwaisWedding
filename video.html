@@ -1,128 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Wedding Invitation</title>
+  <title>Invitation Video</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    body{
+      margin:0;
+      background:black;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #ffe4e1, #fff0f5);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 12px;
-      overflow-x: hidden;
+    video{
+      width:100%;
+      max-width:700px;
+      border-radius:12px;
     }
 
-    /* 🔹 TOP IMAGE FIX */
-    .top-name {
-      width: 130px;
-      max-width: 60vw;
-      margin: 10px auto;
-      display: block;
-    }
-
-    /* 🔹 CARD CLEAN */
-    .card {
-      width: 100%;
-      max-width: 500px;
-      background: white;
-      padding: 16px;
-      border-radius: 18px;
-      box-shadow: 0 0 20px rgba(255, 182, 193, 0.6);
-      text-align: center;
-    }
-
-    /* ARABIC TEXT */
-    .arabic {
-      font-family: 'Amiri', serif;
-      color: #c0266d;
-      font-size: 20px;
-      line-height: 1.6;
-      direction: rtl;
-      margin-bottom: 12px;
-    }
-
-    /* 🔥 VIDEO FIX (MOST IMPORTANT) */
-    video {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      border-radius: 14px;
-      border: 3px solid #ffb6c1;
-      display: block;
-      margin: 10px auto;
-    }
-
-    /* FOOTER */
-    .footer {
-      margin-top: 10px;
-      font-style: italic;
-      color: #b03060;
-      font-size: 13px;
-    }
-
-    /* 🔹 BOTTOM IMAGE FIX (NO OVER SIZE NOW) */
-    .bottom-name {
-      width: 130px;
-      max-width: 60vw;
-      margin: 15px auto 0;
-      display: block;
-    }
-
-    /* MOBILE TWEAK */
-    @media (max-width: 768px) {
-      .arabic {
-        font-size: 18px;
-      }
-
-      .card {
-        padding: 14px;
-      }
-
-      video {
-        border-width: 2px;
-      }
+    /* overlay button if autoplay blocked */
+    .play-btn{
+      position:absolute;
+      padding:12px 20px;
+      background:goldenrod;
+      color:white;
+      border:none;
+      border-radius:10px;
+      font-size:16px;
+      display:none;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- TOP IMAGE -->
-  <img src="salwat.png" class="top-name" alt="top">
+  <video id="myVideo" playsinline controls>
+    <source src="friend.mp4" type="video/mp4">
+  </video>
 
-  <!-- CARD -->
-  <div class="card">
+  <button class="play-btn" id="btn">▶ Tap to Play</button>
 
-    <div class="arabic">
-      النِّكَاحُ نِصْفُ الدِّينِ وَهُوَ سَبَبٌ لِلسَّكِينَةِ فِي الْحَيَاةِ
-    </div>
+  <script>
+    const video = document.getElementById("myVideo");
+    const btn = document.getElementById("btn");
 
-    <!-- VIDEO FIXED -->
-    <video autoplay playsinline controls>
-      <source src="friend.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    // try autoplay with sound
+    window.addEventListener("load", async () => {
+      try {
+        video.muted = false;
+        await video.play();
+      } catch (err) {
+        // autoplay blocked → show button
+        btn.style.display = "block";
+      }
+    });
 
-    <div class="footer">
-      We would be honored by your presence
-    </div>
-
-  </div>
-
-  <!-- BOTTOM IMAGE -->
-  <img src="salwat.png" class="bottom-name" alt="bottom">
+    // manual play fallback
+    btn.addEventListener("click", () => {
+      video.play();
+      btn.style.display = "none";
+    });
+  </script>
 
 </body>
 </html>
