@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Invitation Video</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,117 +15,120 @@
       font-family: Arial, sans-serif;
       background: linear-gradient(to right, #ffe4e1, #fff0f5);
       min-height: 100vh;
+      min-height: -webkit-fill-available;
       display: flex;
       flex-direction: column;
       align-items: center;
-      /* Oopar wali khali jagah ko control karne ke liye padding adjust ki gai hai */
-      padding: 30px 10px;
+      justify-content: center;
+      padding: 8px 8px;
+      overflow-x: hidden;
     }
 
-    /* TOP IMAGE (Thora oopar shift kiya gaya hai) */
-    .top-img {
-      width: 100%;
-      max-width: 450px;
-      margin-bottom: 12px;
-      object-fit: contain;
-    }
-
-    /* MAIN CARD */
-    .card {
-      background: white;
-      padding: 22px 16px;
-      border-radius: 22px;
-      box-shadow: 0 0 24px rgba(255, 182, 193, 0.7);
-      text-align: center;
-      width: 100%;
-      max-width: 500px;
-    }
-
-    .title {
-      color: #d63384;
-      font-size: 24px;
-      font-weight: bold;
+    .top-name {
+      width: 168px;
+      max-width: 42vw;
       margin-bottom: 8px;
+      margin-top: -15px;
+      z-index: 5;
     }
 
-    .subtitle {
-      color: #555;
-      font-size: 14px;
-      margin-bottom: 14px;
-    }
-
-    /* Video frame */
-    .video-frame {
+    .card {
       width: 100%;
-      border-radius: 16px;
-      border: 5px solid #ffb6c1;
-      padding: 4px;
-      background: #fff;
+      max-width: 560px;
+      background: white;
+      padding: 22px 18px;
+      border-radius: 24px;
+      box-shadow: 0 0 28px rgba(255, 182, 193, 0.85);
+      margin-top: -28px;
+      z-index: 2;
+    }
+
+    /* Stylish Arabic Text */
+    .arabic {
+      font-family: 'Amiri', serif;
+      color: #c0266d;
+      font-size: 24px;
+      line-height: 1.5;
+      text-align: center;
+      direction: rtl;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 6px rgba(255, 182, 193, 0.35);
+      padding: 0 10px;
     }
 
     video {
       width: 100%;
-      border-radius: 12px;
+      border-radius: 16px;
+      border: 5px solid #ffb6c1;
       display: block;
+      margin: 12px 0 8px;
     }
 
     .footer {
-      margin-top: 14px;
+      margin-top: 12px;
       font-style: italic;
       color: #b03060;
-      font-size: 13.5px;
+      font-size: 14.5px;
+      text-align: center;
     }
 
-    /* BOTTOM IMAGE */
-    .bottom-img {
-      width: 100%;
-      max-width: 450px;
-      margin-top: 15px;
-      object-fit: contain;
+    .bottom-name {
+      width: 168px;
+      max-width: 42vw;
+      margin-top: -18px;
+      z-index: 5;
     }
 
     /* Mobile Adjustments */
     @media (max-width: 768px) {
-      body {
-        padding: 20px 8px;
+      .top-name {
+        width: 155px;
+        margin-bottom: 6px;
+        margin-top: -18px;
       }
-      
+
       .card {
-        padding: 16px 10px;
-        border-radius: 18px;
+        padding: 20px 16px;
+        border-radius: 22px;
+        margin-top: -35px;
       }
 
-      .title {
-        font-size: 20px;
+      .arabic {
+        font-size: 21.5px;
+        line-height: 1.45;
       }
 
-      .subtitle {
-        font-size: 12px;
+      .bottom-name {
+        width: 155px;
+        margin-top: -22px;
       }
     }
   </style>
 </head>
 <body>
 
-  <img src="salwat.png" alt="Top Name" class="top-img">
+  <!-- Top Name -->
+  <img src="salwat.png" alt="Awais" class="top-name">
 
+  <!-- Video Card -->
   <div class="card">
-    <div class="title">Wedding Invitation 💖</div>
-    <div class="subtitle">A beautiful moment awaits you</div>
-
-    <div class="video-frame">
-      <video autoplay playsinline controls muted>
-        <source src="friend.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+    <div class="arabic">
+      النِّكَاحُ نِصْفُ الدِّينِ وَهُوَ سَبَبٌ لِلسَّكِينَةِ فِي الْحَيَاةِ
     </div>
+
+    <video autoplay playsinline controls>
+      <source src="yourvideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
     <div class="footer">
       We would be honored by your presence
     </div>
   </div>
 
-  <img src="salwat.png" alt="Bottom Name" class="bottom-img">
+  <!-- Bottom Name -->
+  <img src="salwat.png" alt="Arooj" class="bottom-name">
 
 </body>
 </html>
