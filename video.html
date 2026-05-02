@@ -3,7 +3,9 @@
 <head>
   <title>Wedding Invitation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
@@ -15,108 +17,93 @@
       font-family: Arial, sans-serif;
       background: linear-gradient(to right, #ffe4e1, #fff0f5);
       min-height: 100vh;
-      min-height: -webkit-fill-available;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 8px 8px;
-      overflow-x: hidden;
+      padding: 12px;
+      text-align: center;
     }
 
-    .top-name {
-      width: 168px;
-      max-width: 42vw;
-      margin-bottom: 8px;
-      margin-top: -15px;
-      z-index: 5;
+    /* 🔹 TOP & BOTTOM IMAGE FIX */
+    .top-name, .bottom-name {
+      width: 140px;
+      max-width: 45vw;
+      display: block;
+      margin: 10px auto;
     }
 
+    /* 🔥 MAIN CARD */
     .card {
       width: 100%;
-      max-width: 560px;
+      max-width: 600px;
       background: white;
-      padding: 22px 18px;
-      border-radius: 24px;
-      box-shadow: 0 0 28px rgba(255, 182, 193, 0.85);
-      margin-top: -28px;
-      z-index: 2;
+      padding: 18px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 182, 193, 0.7);
     }
 
-    /* Stylish Arabic Text */
+    /* 🔹 ARABIC TEXT */
     .arabic {
       font-family: 'Amiri', serif;
       color: #c0266d;
-      font-size: 24px;
-      line-height: 1.5;
-      text-align: center;
+      font-size: 22px;
+      line-height: 1.6;
       direction: rtl;
-      font-weight: 700;
       margin-bottom: 12px;
-      text-shadow: 0 2px 6px rgba(255, 182, 193, 0.35);
-      padding: 0 10px;
+      padding: 0 5px;
+      font-weight: 700;
     }
 
+    /* 🔥 VIDEO FULL FIX */
     video {
       width: 100%;
+      max-height: 320px;
+      object-fit: cover;
       border-radius: 16px;
-      border: 5px solid #ffb6c1;
+      border: 4px solid #ffb6c1;
       display: block;
-      margin: 12px 0 8px;
+      margin: 10px auto;
     }
 
+    /* FOOTER */
     .footer {
-      margin-top: 12px;
+      margin-top: 10px;
       font-style: italic;
       color: #b03060;
-      font-size: 14.5px;
-      text-align: center;
+      font-size: 14px;
     }
 
-    .bottom-name {
-      width: 168px;
-      max-width: 42vw;
-      margin-top: -18px;
-      z-index: 5;
-    }
-
-    /* Mobile Adjustments */
+    /* 🔹 MOBILE RESPONSIVE */
     @media (max-width: 768px) {
-      .top-name {
-        width: 155px;
-        margin-bottom: 6px;
-        margin-top: -18px;
-      }
-
-      .card {
-        padding: 20px 16px;
-        border-radius: 22px;
-        margin-top: -35px;
+      .top-name, .bottom-name {
+        width: 120px;
       }
 
       .arabic {
-        font-size: 21.5px;
-        line-height: 1.45;
+        font-size: 20px;
       }
 
-      .bottom-name {
-        width: 155px;
-        margin-top: -22px;
+      video {
+        max-height: 250px;
       }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Top Name -->
-  <img src="salwat.png" alt="Awais" class="top-name">
+  <!-- TOP IMAGE -->
+  <img src="salwat.png" alt="Top Name" class="top-name">
 
-  <!-- Video Card -->
+  <!-- CARD -->
   <div class="card">
+
     <div class="arabic">
       النِّكَاحُ نِصْفُ الدِّينِ وَهُوَ سَبَبٌ لِلسَّكِينَةِ فِي الْحَيَاةِ
     </div>
 
+    <!-- VIDEO -->
     <video autoplay playsinline controls>
       <source src="yourvideo.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -125,10 +112,11 @@
     <div class="footer">
       We would be honored by your presence
     </div>
+
   </div>
 
-  <!-- Bottom Name -->
-  <img src="salwat.png" alt="Arooj" class="bottom-name">
+  <!-- BOTTOM IMAGE -->
+  <img src="salwat.png" alt="Bottom Name" class="bottom-name">
 
 </body>
 </html>
