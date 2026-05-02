@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
   <title>Wedding Invitation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
@@ -15,120 +17,111 @@
       font-family: Arial, sans-serif;
       background: linear-gradient(to right, #ffe4e1, #fff0f5);
       min-height: 100vh;
-      min-height: -webkit-fill-available;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 8px 8px;
+      padding: 12px;
       overflow-x: hidden;
     }
 
+    /* 🔹 TOP IMAGE FIX */
     .top-name {
-      width: 168px;
-      max-width: 42vw;
-      margin-bottom: 8px;
-      margin-top: -15px;
-      z-index: 5;
+      width: 130px;
+      max-width: 60vw;
+      margin: 10px auto;
+      display: block;
     }
 
+    /* 🔹 CARD CLEAN */
     .card {
       width: 100%;
-      max-width: 560px;
+      max-width: 500px;
       background: white;
-      padding: 22px 18px;
-      border-radius: 24px;
-      box-shadow: 0 0 28px rgba(255, 182, 193, 0.85);
-      margin-top: -28px;
-      z-index: 2;
+      padding: 16px;
+      border-radius: 18px;
+      box-shadow: 0 0 20px rgba(255, 182, 193, 0.6);
+      text-align: center;
     }
 
-    /* Stylish Arabic Text */
+    /* ARABIC TEXT */
     .arabic {
       font-family: 'Amiri', serif;
       color: #c0266d;
-      font-size: 24px;
-      line-height: 1.5;
-      text-align: center;
+      font-size: 20px;
+      line-height: 1.6;
       direction: rtl;
-      font-weight: 700;
       margin-bottom: 12px;
-      text-shadow: 0 2px 6px rgba(255, 182, 193, 0.35);
-      padding: 0 10px;
     }
 
+    /* 🔥 VIDEO FIX (MOST IMPORTANT) */
     video {
       width: 100%;
-      border-radius: 16px;
-      border: 5px solid #ffb6c1;
+      max-width: 100%;
+      height: auto;
+      border-radius: 14px;
+      border: 3px solid #ffb6c1;
       display: block;
-      margin: 12px 0 8px;
+      margin: 10px auto;
     }
 
+    /* FOOTER */
     .footer {
-      margin-top: 12px;
+      margin-top: 10px;
       font-style: italic;
       color: #b03060;
-      font-size: 14.5px;
-      text-align: center;
+      font-size: 13px;
     }
 
+    /* 🔹 BOTTOM IMAGE FIX (NO OVER SIZE NOW) */
     .bottom-name {
-      width: 168px;
-      max-width: 42vw;
-      margin-top: -18px;
-      z-index: 5;
+      width: 130px;
+      max-width: 60vw;
+      margin: 15px auto 0;
+      display: block;
     }
 
-    /* Mobile Adjustments */
+    /* MOBILE TWEAK */
     @media (max-width: 768px) {
-      .top-name {
-        width: 155px;
-        margin-bottom: 6px;
-        margin-top: -18px;
+      .arabic {
+        font-size: 18px;
       }
 
       .card {
-        padding: 20px 16px;
-        border-radius: 22px;
-        margin-top: -35px;
+        padding: 14px;
       }
 
-      .arabic {
-        font-size: 21.5px;
-        line-height: 1.45;
-      }
-
-      .bottom-name {
-        width: 155px;
-        margin-top: -22px;
+      video {
+        border-width: 2px;
       }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Top Name -->
-  <img src="salwat.png" alt="Awais" class="top-name">
+  <!-- TOP IMAGE -->
+  <img src="salwat.png" class="top-name" alt="top">
 
-  <!-- Video Card -->
+  <!-- CARD -->
   <div class="card">
+
     <div class="arabic">
       النِّكَاحُ نِصْفُ الدِّينِ وَهُوَ سَبَبٌ لِلسَّكِينَةِ فِي الْحَيَاةِ
     </div>
 
-    <video autoplay playsinline controls>
+    <!-- VIDEO FIXED -->
+    <video controls autoplay muted playsinline>
       <source src="friend.mp4" type="video/mp4">
-      Your browser does not support the video tag.
     </video>
 
     <div class="footer">
       We would be honored by your presence
     </div>
+
   </div>
 
-  <!-- Bottom Name -->
-  <img src="salwat.png" alt="Arooj" class="bottom-name">
+  <!-- BOTTOM IMAGE -->
+  <img src="salwat.png" class="bottom-name" alt="bottom">
 
 </body>
 </html>
